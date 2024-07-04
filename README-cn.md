@@ -1,6 +1,6 @@
 <div align="center">
 <h1 align="center">MobileCPM</h1>
-<p align="center">A Toolkit for Running On-device Large Language Models (LLMs) in APP</p>
+<p align="center">一键集成端侧大模型到APP</p>
 </div>
 <div align="center">
 
@@ -9,37 +9,43 @@
 </div>
 <h4 align="center">
     <p>
-        <b>English</b> | <a href="https://github.com/OpenBMB/MobileCPM/blob/main/README-cn.md">中文</a>
+        <a href="https://github.com/OpenBMB/MobileCPM/blob/main/README.md">English</a> | <b>中文</b>
     <p>
 </h4>
 
-## What is MobileCPM?
+<div align="center">
+  TestFlight:https://testflight.apple.com/join/dJt5vfOZ
+</div>
 
-MobileCPM is the first open-source toolset for on-device large models, designed to help individual or enterprise developers seamlessly integrate on-device large models into their APP products. In the demo APP shown below, MiniCPM provides on-device model capabilities and comes with several example agents such as a translator, poet, storyteller, and motivational coach to cater to various use cases. Moreover, the types of on-device models and agents can be flexibly expanded. Developers can customize agents to meet business needs and scenarios by adding or modifying prompts and replacing on-device models. The image below demonstrates the conversation effect of the built-in "motivational coach" agent. **Please note** that in this example, the network connection has been disconnected, and the on-device model is used directly.
+
+## 什么是MobileCPM?
+
+MobileCPM 是首个开源的端侧大模型工具套件，帮助个人或企业开发者一键集成端侧大模型到 APP 产品中。在下图演示 APP 中，MiniCPM 提供端侧模型能力，并内置翻译家、诗人、故事写手、励志教练等多个示例智能体，满足多种使用场景。不仅如此，端侧模型和智能体种类，可以灵活扩展。开发者通过增加，修改prompt、更换端侧模型的方式，即可定制智能体，满足业务需求和场景。下图演示了内置“励志教练”智能体的对话效果。**请注意**，在该例子中，已经断开网络连接，直接使用端侧模型。
 
 | ![Image 1](https://github.com/OpenBMB/MobileCPM/blob/main/assets/pics/modelselect.jpeg) | ![Image 2](https://github.com/OpenBMB/MobileCPM/blob/main/assets/pics/homepage.jpeg) | ![Image 3](https://github.com/OpenBMB/MobileCPM/blob/main/assets/pics/chatpage.jpeg) |
 |:----------------------:|:----------------------:|:----------------------:|
-| Step 1: Download and Load the Model          | Step 2: Select an Agent          | Step 3: Interact with the On-Device Model          |
+| 第一步：下载并加载模型          | 第二步：选择智能体          | 第三步：与端侧模型对话          |
+
+当前，MobileCPM 已经全面支持iOS系统，testflight外部测试链接为：https://testflight.apple.com/join/dJt5vfOZ
+Android版本也即将上线，敬请期待。
 
 
-Currently, MobileCPM fully supports the iOS system. You can access the TestFlight external testing link here: https://testflight.apple.com/join/dJt5vfOZ. The Android version is also coming soon, so stay tuned.
+## MobileCPM 能做什么？
 
-## What MobileCPM can do?
-
-On-device LLMs are a significant technological trend, with some on-device LLMs already running in non-GPU environments, such as the open-source miniCPM from ModelBest. How to quickly integrate on-device LLMs into apps is the challenge that MobileCPM aims to solve. Specifically, MobileCPM features the following highlights:
-
-+ Simple and easy to use: Download the MobileCPM source code and compile the app with one click. Additionally, the official tutorial is highly detailed, making it easy to get started;
-+ Deep integration: The inference modules have been highly abstracted by MobileCPM. Without worrying about the complex intermediate implementations, you can meet custom needs by following the various examples;
-+ Zero-cost inference: The LLM runs on local mobile devices without relying on cloud GPUs, eliminating any inference costs for developers;
-+ Lightning-Fast Response: Mainstream mobile phones on the market can run smoothly, such as the iPhone 11, with an inference speed exceeding 20 tokens per second.
+大模型小型化是科技趋势，一些端侧模型已经在非GPU环境运行，比如面壁智能公司开源的miniCPM。如何快捷集成端侧大模型能力到APP，是MobileCPM要解决的难题。具体来说，MobileCPM主要包含如下特色: 
++ 简单易用: 下载MobileCPM源码，一键即可编译出APP。并且，官方配备保姆式教程，容易上手；
++ 深度集成: 从大模型文件到最后输出智能之间的模块和链路，已被MobileCPM高度抽象，无需关心中间繁杂实现，按照官方配备的多种Agent调用示例，即可完成定制需求；
++ 零成本推理: 大模型运行在本地移动设备，不依赖云端GPU，无需开发方支付任何推理费用；
++ 毫秒急速响应: 市面主流手机皆可流程运行，比如iPhone 11，推理速度超过 20 token/s；
 
 
-## Quickstart
 
-MobileCPM is a complete iOS mobile app project, providing all Xcode project code. Developers can directly download the project to compile, modify, and run it. The TestFlight testing link for this open-source app is: https://testflight.apple.com/join/dJt5vfOZ
+## 快速开始
 
-### How to Download and Load the Model
-Before starting a conversation, you need to download and load the model. Here is an example:
+MobileCPM是完整的iOS移动端APP项目，提供了项目全部Xcode工程代码，开发者可以直接下载工程编译、修改、运行。本开源APP的testflight测试链接为: https://testflight.apple.com/join/dJt5vfOZ
+
+### 如何下载并加载模型
+在对话开始前，需要先进行模型的下载和加载，示例如下：
 ```python
 func privateLanguageModelQ4_1Down() {
     languageModelQ4_1Manager?.downloadV2(completionBlock: { [weak self] status, progress in
@@ -62,8 +68,9 @@ func privateLanguageModelQ4_1Down() {
     })
 }
 ```
-### How to Replace the On-Device Model
-The example provides the MiniCPM on-device model, and developers can replace it with other models.
+
+### 如何更换端侧模型
+示例提供了MiniCPM端侧模型，开发者可更换其他模型。
 ```python
 /// 定义 MiniCPM 模型常量
 struct MiniCPMModelConst {
@@ -89,8 +96,8 @@ struct MiniCPMModelConst {
 
 ```
 
-### How to Customize Agents
-The example comes with a dozen preset agents, each with attributes such as name, avatar, prompt, prologue, and model_name_or_path. Developers can modify these attributes or add new agents.
+### 如何自定义智能体
+示例预置了十几种智能体，每个智能体有name,avatar,prompt,prologue,model_name_or_path等属性，开发者可修改属性，可增加新的智能体。
 ```python
 "0": {
         "name": "英文翻译",
@@ -98,7 +105,7 @@ The example comes with a dozen preset agents, each with attributes such as name,
         "prompt": "我希望你充当英语翻译、拼写校正和改进者。我会用任何语言与你交谈，你会检测语言，翻译它，并用我的文本的更正和改进版本，用英语回答。我希望你把我简化的A0级单词和句子换成更漂亮、更优雅的高级英语单词和句子。保持含义不变，但使它们更具文学性。我希望你只回复更正，改进，没有别的，不要写解释。",
         "prologue": "我的第一句话是“istanbulu cok seviyom burada olmak cok guzel”",
         "model_name_or_path": "minicpm"
-},
+    },
 "1": {
         "name": "广告文案",
         "avatar": "广告文案.png",
@@ -108,8 +115,8 @@ The example comes with a dozen preset agents, each with attributes such as name,
 },
 ```
 
-### How to Implement Streaming Conversation
-As shown in the example, you can achieve a streaming output effect by subscribing to the output of the large model and updating the page output accordingly:
+### 如何实现流式对话功能
+如示例中，订阅大模型的输出，更新页面输出可实现流式输出效果：
 ```python
 /// 订阅大模型的输出
 public func subscriberLlamaMessageLog() {
@@ -187,12 +194,13 @@ public func subscriberLlamaMessageLog() {
         }
 }
 ```
+## 开源协议
 
-## Open-Source License
+本仓库中代码依照Apache-2.0协议开源
 
-The code in this repository is open-sourced under the Apache-2.0 license.
+## 声明
++ MobileCPM内置的MiniCPM通过学习大量的文本来生成内容，但它无法理解、表达个人观点或价值判断，它所输出的任何内容都不代表模型开发者的观点和立场。因此用户在使用MobileCPM内置的MiniCPM生成的内容时，应自行负责对其进行评估和验证。
++ 如果由于使用MobileCPM内置的MiniCPM开源模型而导致的任何问题，包括但不限于数据安全问题、公共舆论风险，或模型被误导、滥用、传播或不当利用所带来的任何风险和问题，我们将不承担任何责任。
 
-## Disclaimer
 
-+ The built-in MiniCPM of MobileCPM generates content by learning from a large amount of text. However, it cannot understand, express personal opinions, or value judgments, and any output content does not represent the views and positions of the model developers. Therefore, users are responsible for evaluating and verifying the content generated by MiniCPM built into MobileCPM.
-+ We will not be responsible for any issues arising from the use of the open-source MiniCPM model in MobileCPM, including but not limited to data security issues, public opinion risks, or any risks and issues caused by the model being misled, misused, disseminated, or improperly utilized.
+
