@@ -1,0 +1,197 @@
+Log start
+clip_model_load: description:  image encoder for LLaVA
+clip_model_load: GGUF version: 3
+clip_model_load: alignment:    32
+clip_model_load: n_tensors:    440
+clip_model_load: n_kv:         18
+clip_model_load: ftype:        f16
+
+clip_model_load: loaded meta data with 18 key-value pairs and 440 tensors from ../MiniCPM-V-2/mmproj-model-f16.gguf
+clip_model_load: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+clip_model_load: - kv   0:                       general.architecture str              = clip
+clip_model_load: - kv   1:                      clip.has_text_encoder bool             = false
+clip_model_load: - kv   2:                    clip.has_vision_encoder bool             = true
+clip_model_load: - kv   3:                   clip.has_llava_projector bool             = true
+clip_model_load: - kv   4:                          general.file_type u32              = 1
+clip_model_load: - kv   5:                        general.description str              = image encoder for LLaVA
+clip_model_load: - kv   6:                        clip.projector_type str              = resampler
+clip_model_load: - kv   7:                     clip.vision.image_size u32              = 448
+clip_model_load: - kv   8:                     clip.vision.patch_size u32              = 14
+clip_model_load: - kv   9:               clip.vision.embedding_length u32              = 1152
+clip_model_load: - kv  10:            clip.vision.feed_forward_length u32              = 4304
+clip_model_load: - kv  11:                 clip.vision.projection_dim u32              = 0
+clip_model_load: - kv  12:           clip.vision.attention.head_count u32              = 16
+clip_model_load: - kv  13:   clip.vision.attention.layer_norm_epsilon f32              = 0.000001
+clip_model_load: - kv  14:                    clip.vision.block_count u32              = 26
+clip_model_load: - kv  15:                     clip.vision.image_mean arr[f32,3]       = [0.500000, 0.500000, 0.500000]
+clip_model_load: - kv  16:                      clip.vision.image_std arr[f32,3]       = [0.500000, 0.500000, 0.500000]
+clip_model_load: - kv  17:                              clip.use_gelu bool             = true
+clip_model_load: - type  f32:  277 tensors
+clip_model_load: - type  f16:  163 tensors
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M2
+ggml_metal_init: picking default device: Apple M2
+ggml_metal_init: default.metallib not found, loading from source
+ggml_metal_init: GGML_METAL_PATH_RESOURCES = nil
+ggml_metal_init: loading '/Users/a0/Desktop/code/llamacppminicpmv/ggml-metal.metal'
+ggml_metal_init: GPU name:   Apple M2
+ggml_metal_init: GPU family: MTLGPUFamilyApple8  (1008)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction support   = true
+ggml_metal_init: simdgroup matrix mul. support = true
+ggml_metal_init: hasUnifiedMemory              = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+clip_model_load: CLIP using Metal backend
+clip_model_load: text_encoder:   0
+clip_model_load: vision_encoder: 1
+clip_model_load: llava_projector:  1
+clip_model_load: model size:     828.18 MB
+clip_model_load: metadata size:  0.17 MB
+clip_model_load: params backend buffer size =  828.18 MB (440 tensors)
+ggml_backend_metal_buffer_type_alloc_buffer: allocated buffer, size =   828.19 MiB, (  830.06 / 10922.67)
+key clip.vision.image_grid_pinpoints not found in file
+key clip.vision.mm_patch_merge_type not found in file
+key clip.vision.image_crop_resolution not found in file
+ggml_backend_metal_buffer_type_alloc_buffer: allocated buffer, size =    88.81 MiB, (  918.88 / 10922.67)
+clip_model_load: compute allocated memory: 88.80 MB
+llama_model_loader: loaded meta data with 22 key-value pairs and 363 tensors from ../MiniCPM-V-2/MiniCPM/ggml-model-Q4_K_M.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = minicpm
+llama_model_loader: - kv   1:                               general.name str              = MiniCPM
+llama_model_loader: - kv   2:                     minicpm.context_length u32              = 4096
+llama_model_loader: - kv   3:                   minicpm.embedding_length u32              = 2304
+llama_model_loader: - kv   4:                        minicpm.block_count u32              = 40
+llama_model_loader: - kv   5:                minicpm.feed_forward_length u32              = 5760
+llama_model_loader: - kv   6:               minicpm.rope.dimension_count u32              = 64
+llama_model_loader: - kv   7:               minicpm.attention.head_count u32              = 36
+llama_model_loader: - kv   8:            minicpm.attention.head_count_kv u32              = 36
+llama_model_loader: - kv   9:   minicpm.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                          general.file_type u32              = 15
+llama_model_loader: - kv  11:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  12:                      tokenizer.ggml.tokens arr[str,122753]  = ["<unk>", "<s>", "</s>", "<SEP>", "<C...
+llama_model_loader: - kv  13:                      tokenizer.ggml.scores arr[f32,122753]  = [-1000.000000, -1000.000000, -1000.00...
+llama_model_loader: - kv  14:                  tokenizer.ggml.token_type arr[i32,122753]  = [3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  15:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  16:                tokenizer.ggml.eos_token_id u32              = 2
+llama_model_loader: - kv  17:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  18:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  19:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  20:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   81 tensors
+llama_model_loader: - type q5_0:   20 tensors
+llama_model_loader: - type q8_0:   20 tensors
+llama_model_loader: - type q4_K:  221 tensors
+llama_model_loader: - type q6_K:   21 tensors
+llm_load_vocab: mismatch in special tokens definition ( 3528/122753 vs 271/122753 ).
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = minicpm
+llm_load_print_meta: vocab type       = SPM
+llm_load_print_meta: n_vocab          = 122753
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: n_ctx_train      = 4096
+llm_load_print_meta: n_embd           = 2304
+llm_load_print_meta: n_head           = 36
+llm_load_print_meta: n_head_kv        = 36
+llm_load_print_meta: n_layer          = 40
+llm_load_print_meta: n_rot            = 64
+llm_load_print_meta: n_embd_head_k    = 64
+llm_load_print_meta: n_embd_head_v    = 64
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: n_embd_k_gqa     = 2304
+llm_load_print_meta: n_embd_v_gqa     = 2304
+llm_load_print_meta: f_norm_eps       = 0.0e+00
+llm_load_print_meta: f_norm_rms_eps   = 1.0e-05
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 5760
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 0
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 4096
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 2B
+llm_load_print_meta: model ftype      = Q4_K - Medium
+llm_load_print_meta: model params     = 3.01 B
+llm_load_print_meta: model size       = 1.82 GiB (5.21 BPW) 
+llm_load_print_meta: general.name     = MiniCPM
+llm_load_print_meta: BOS token        = 1 '<s>'
+llm_load_print_meta: EOS token        = 2 '</s>'
+llm_load_print_meta: UNK token        = 0 '<unk>'
+llm_load_print_meta: PAD token        = 0 '<unk>'
+llm_load_print_meta: LF token         = 1099 '<0x0A>'
+llm_load_tensors: ggml ctx size =    0.37 MiB
+ggml_backend_metal_buffer_from_ptr: allocated buffer, size =  1716.20 MiB, ( 2635.08 / 10922.67)
+llm_load_tensors: offloading 40 repeating layers to GPU
+llm_load_tensors: offloading non-repeating layers to GPU
+llm_load_tensors: offloaded 41/41 layers to GPU
+llm_load_tensors:      Metal buffer size =  1716.20 MiB
+llm_load_tensors:        CPU buffer size =   151.72 MiB
+..................................................................................
+llama_new_context_with_model: n_ctx      = 4096
+llama_new_context_with_model: n_batch    = 2048
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M2
+ggml_metal_init: picking default device: Apple M2
+ggml_metal_init: default.metallib not found, loading from source
+ggml_metal_init: GGML_METAL_PATH_RESOURCES = nil
+ggml_metal_init: loading '/Users/a0/Desktop/code/llamacppminicpmv/ggml-metal.metal'
+ggml_metal_init: GPU name:   Apple M2
+ggml_metal_init: GPU family: MTLGPUFamilyApple8  (1008)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction support   = true
+ggml_metal_init: simdgroup matrix mul. support = true
+ggml_metal_init: hasUnifiedMemory              = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+ggml_backend_metal_buffer_type_alloc_buffer: allocated buffer, size =  1440.00 MiB, ( 4076.08 / 10922.67)
+llama_kv_cache_init:      Metal KV buffer size =  1440.00 MiB
+llama_new_context_with_model: KV self size  = 1440.00 MiB, K (f16):  720.00 MiB, V (f16):  720.00 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.47 MiB
+ggml_backend_metal_buffer_type_alloc_buffer: allocated buffer, size =   314.02 MiB, ( 4390.09 / 10922.67)
+llama_new_context_with_model:      Metal compute buffer size =   314.00 MiB
+llama_new_context_with_model:        CPU compute buffer size =    12.51 MiB
+llama_new_context_with_model: graph nodes  = 1368
+llama_new_context_with_model: graph splits = 2
+encode_image_with_clip: image embedding created: 64 tokens
+
+encode_image_with_clip: image encoded in  5656.56 ms by CLIP (   88.38 ms per image patch)
+slice_image: multiple 4
+slice_image: image_size: 1280 590; best_grid: 3 1
+llava_image_embed_make_with_bytes_slice: 426 590
+llava_image_embed_make_with_bytes_slice: 426 590
+llava_image_embed_make_with_bytes_slice: 426 590
+encode_image_with_clip: image embedding created: 64 tokens
+
+encode_image_with_clip: image encoded in  5606.90 ms by CLIP (   87.61 ms per image patch)
+encode_image_with_clip: image embedding created: 64 tokens
+
+encode_image_with_clip: image encoded in  5585.24 ms by CLIP (   87.27 ms per image patch)
+encode_image_with_clip: image embedding created: 64 tokens
+
+encode_image_with_clip: image encoded in  5659.62 ms by CLIP (   88.43 ms per image patch)
+<用户>这张图里有什么?
+<AI>
+这张图片显示了一个餐馆的招牌。
+
+llama_print_timings:        load time =   26230.34 ms
+llama_print_timings:      sample time =       0.86 ms /     9 runs   (    0.10 ms per token, 10440.84 tokens per second)
+llama_print_timings: prompt eval time =    3553.20 ms /   280 tokens (   12.69 ms per token,    78.80 tokens per second)
+llama_print_timings:        eval time =     270.55 ms /     8 runs   (   33.82 ms per token,    29.57 tokens per second)
+llama_print_timings:       total time =   26538.76 ms /   288 tokens
+ggml_metal_free: deallocating
+ggml_metal_free: deallocating
